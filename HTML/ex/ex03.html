@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input 태그</title>
+    </head>
+    <body>
+        <!-- input 태그 -->
+        <b>ID</b>
+        <input type="text"><br><br>
+
+        <b>Password</b>
+        <input type="password"><br><br>
+
+        <b>Password 확인</b>
+        <input type="password"><br><br>
+
+        <!-- radio type (성별 선택 - 둘 중에 하나 선택) -->
+        <!-- name이 같으면 같은 이름의 태그 중 하나만 선택 -->
+        <b>성별</b><br>
+        <input type="radio" name="gender" value="male" checked>남자
+        <input type="radio" name="gender" value="female"> 여자
+        <br><br>
+
+        <!-- check box type : 여러개를 동시에 선택할 수 있음 -->
+        <b>취미</b><br>
+        <label><input type="checkbox" name="hobby" value="reading">독서</label>
+        <label><input type="checkbox" name="hobby" value="game">게임</label>
+        <label><input type="checkbox" name="hobby" value="health">헬스</label>
+        <label><input type="checkbox" name="hobby" value="hiking">등산</label>
+        <br><br>
+
+        <!-- file type -->
+        <b>프로필 사진 업로드</b><br><br>
+        <input type="file">
+
+        <br><br>
+        <!-- submit type : 데이터를 서버에 전송하는 버튼 -->
+        <input type="submit" value="서버전송">
+
+        <hr>
+        
+        <!-- 일반 버튼: 아무 기능도 하지 않음 -->
+        <button type="button">일반 버튼</button>
+        <br><br>
+
+        <!--
+            주의!!
+            속성(attribute): key와 value가 있는 것 ex) type="radio"
+            프로퍼티(property): 예)checked 또는 selected
+        -->
+
+
+        <!-- select 태그 -->
+        <select>
+            <option>포지션선택</option>
+            <option>탑</option>
+            <option>정글</option>
+            <option selected>미드</option>
+            <option>원딜</option>
+            <option>서폿</option>
+        </select>
+        <br><br>
+
+        <!-- textarea 태그 -->
+        <b>자기소개</b><br>
+        <textarea></textarea>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+body { background-color: lightcyan; }
+.box-size-100 { width: 100px; height: 100px; }
+#div1 { background-color: lightblue; 
+    /*  padding: 안쪽 여백, div에서는 사이즈가 늘어나버림*/
+    padding-bottom: 30px; 
+    /* margin : 바깥 여백 - 살구색 / 바깥쪽에 여백이 있다.*/
+    margin-bottom: 30px;
+}
+/* 상자끼리 떼어주고 싶을때(여유 공간을 주고 싶을때 margin 사용하면 됨 */
+#div2 { background-color: lightskyblue;}
+#div3 { background-color: rgb(46, 171, 248);}
+#div4 { background-color: rgb(15, 129, 201);}
+#div5 { background-color: rgb(35, 96, 134);}
+
+/* 아래에 있는 자식들이 가로로 붙음(바로 아래 자식만 해당, 손주는 해당 x) */
+.flex { display: flex; background-color: beige; 
+    /* 배치 / 정렬효과 */
+    justify-content: space-around;}
+
+/* inline 태그 : 인라인 태그에는 크기 지정이 안됨 */
+/* display: block을 쓰면 span을 block으로 형변환해주는 느낌 */
+.text1 { display: block; background-color: lightcoral; padding: 20px; margin: 30px; width: 300px; height: 300px; }
+.text2 { background-color: rgb(238, 162, 162); }
+
+

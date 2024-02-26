@@ -1,0 +1,8 @@
+body { margin: 0;}
+.wrap { width: 1200px; height: 1000px; }
+header { width: 1200px; height: 200px; }
+.flex { display: flex; }
+header .logo { width: 200px; height: 200px; background-color: dodgerblue; }
+header .right { width: 1000px; height: 200px; background-color: brown; }
+.contents { width:1200px; height: 700px; background-color: salmon; }
+footer { width: 1200px; height: 100px; background-color: paleturquoise;}

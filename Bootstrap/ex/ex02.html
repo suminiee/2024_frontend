@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>레이아웃</title>
+        <meta charset="utf-8">
+        
+        <!-- BootStrap CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="ex02_style.css">
+    </head>
+    <body>
+        <!-- container를 class에 넣어주면 부트스트랩이 가운데 정렬을 해줌 / 가운데정렬 + bg(background) -->
+        <div id="wrap" class="container">
+            <header class="d-flex justify-content-center align-items-center"> <!-- d-flex & justify-content-center 같이 쓰면 자식 요소만 가운데정렬 시킬 수 있음 -->
+                <h1>Marondal</h1>
+            </header>
+            <nav class="bg-info d-flex align-items-center">
+                <!-- ul:nav li:nav-item a:nav-link -->
+                <!-- w-100 : 부모의 width의 100%로 늘려서 모두 사용하겠다는 의미 -->
+                <ul class="nav nav-fill w-100"> 
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">메일</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">카페</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">블로그</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">지식인</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">쇼핑</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-dark font-weight-bold">부동산</a></li>
+                </ul>
+            </nav>
+            <!-- 가로로 12칸이 있다고 생각한다음 나눠서 col-n개로 class에 넣어주기 -->
+            <!-- d-flex :  height도 상속해줘서 써줄 필요 없어짐.  -->
+            <section class="contents d-flex">
+                <section class="left col-8">
+                    <!-- 높이 나누기 : h-{비율} 클래스 사용하기 25, 50, 75, auto%  -->
+                    <!-- article1 -->
+                    <article class=" h-50">
+                        <div class="d-flex pt-3">
+                            <div class="col-3 p-0">
+                                <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg" alt="좌측이미지" width="170" height="115">
+                            </div>
+                            <div class="col-9">
+                                <div class="text-info font-weight-bold">디자인</div>
+                                <div class="font-weight-bold">'힐링 제격' 한적한 소도시에 위치한 로컬 상점</div>
+                                <small>체력 4700 방어력 329 마저201 인 챔피언이 저지불가, 쉴드, 벽 넘기는 거 있고요.
+                                    에어본있고, 심지어 쿨타임은 1️초밖에 안되고 마나는 15 들고 w는 심지어 변신하면 쿨 초기화에다가 패시브는 고정피해가 들어가며 그 다음에 방마저 올리면 올릴수록 스킬 가속이 생기고!</small>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- article2 -->
+                    <article class="h-50">
+                        <div class="d-flex pt-3">
+                            <div class="col-3 p-0">
+                                <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg" alt="좌측이미지" width="170" height="115">
+                            </div>
+                            <div class="col-9">
+                                <div class="text-info font-weight-bold">디자인</div>
+                                <div class="font-weight-bold">'힐링 제격' 한적한 소도시에 위치한 로컬 상점</div>
+                                <small>체력 4700 방어력 329 마저201 인 챔피언이 저지불가, 쉴드, 벽 넘기는 거 있고요.
+                                    에어본있고, 심지어 쿨타임은 1️초밖에 안되고 마나는 15 들고 w는 심지어 변신하면 쿨 초기화에다가 패시브는 고정피해가 들어가며 그 다음에 방마저 올리면 올릴수록 스킬 가속이 생기고!</small>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <aside class="col-4">
+                    <div class="mt-2">
+                        <small>marondal을 더 안전하고 편리하게 이용하세요.</small>
+                        <a href="#" class="btn btn-warning w-100 mt-2">Marondal 로그인</a>
+                        <div class="d-flex justify-content-between mt-2">
+                            <a href="#" class="text-dark">아이디 / 비밀번호찾기</a>
+                            <a href="#" class="text-dark">회원가입</a>
+                        </div>
+                        <img id="img" src="https://naverpa-phinf.pstatic.net/MjAyNDAxMjRfNTQg/MDAxNzA2MDgxOTY4NTI0.6EdGP-LoIbY7kij1r8icuZV6azuMbAlv_bmnmEvyMKkg._vKf7EAvwcyoHdcO7UwbJb_aOfrDrqhnspEzwFYWe-Ag.JPEG/GFA_stone_240119_1_342x228_170608196851510400536039286910118.jpg">
+                    </div>
+                </aside>
+            </section>
+            <footer class="d-flex justify-content-center align-items-center">
+                <div>Copyright © marondal 2024</div>
+            </footer>
+        </div>
+    </body>
+</html>
+
+<!-- div : 부모의 가로값 물려받음 => 높이만 지정 -->
+<!-- flex div : 부모의 높이 물려받음 => 가로값만 지정 -->

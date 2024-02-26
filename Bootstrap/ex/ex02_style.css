@@ -1,0 +1,11 @@
+header { height: 100px; }
+nav { height: 50px; }
+.contents { height: 300px; }
+footer { height: 150px; }
+/* 메뉴에 마우스를 올렸을 때 글자 색 변경 
+    .text-dark를 사용 할 때 hover가 안 먹히는 현상 해결법 */
+/* 1. 부트스트랩의 색상을 사용하지 않는다. */
+/* 2. hover에 !important를 붙인다 */
+.nav-item > .nav-link:hover { color: white !important; }
+
+#img { height: 180px ;}

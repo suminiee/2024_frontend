@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bootstrap layout03</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap03_style.css">
+    </head>
+    <body>
+        <div id="wrap" class="container bg-secondary">
+            <header class="d-flex">
+                <div id="logo" class="bg-info col-2">로고 영역</div>
+                <nav class="bg-success col-10">메뉴 영역</nav>
+            </header>
+            <section id="mid" class="d-flex bg-white">
+                <section class="bg-warning col-6">content1</section>
+                <aside class="bg-white col-6">
+                    <div class="bg-primary h-50">article1</div>
+                    <div class="bg-secondary h-50">article2</div>
+                </aside>
+            </section>
+            <footer class="d-flex">
+                <div class="bg-danger col-2">footer logo</div>
+                <address class="bg-success col-8 mt-3">copyright</address>
+                <div class="bg-danger col-2">footer logo</div>
+            </footer>
+        </div>
+    </body>
+</html>

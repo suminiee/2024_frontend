@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>테이블 태그</title>
+    </head>
+    <body>
+        <!-- 테이블: 표를 만든다 -->
+        <!-- table(전체) tr(행) th(제목칸) td(일반칸) -->
+        <table border="1"> <!-- border 속성을 주면 테이블이 보임-->
+            <!-- tr: 한 행의 묶음-->
+            <tr>
+                <!-- td : 셀 한칸 -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <!-- 두 번째 행 -->
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </table>
+        <hr>
+
+        <table border="1" width="500">
+            <thead>
+                <!-- 굵게, 가운데 정렬 처리가 되어 출력됨. -->
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>글쓴이</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- 왼쪽정렬, 굵게x-->
+                    <td>1</td>
+                    <td>첫번째 글</td>
+                    <td>최우제</td>
+                    <td>2024-01-26 20:18:36</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>두번재 글</td>
+                    <td>이상혁</td>
+                    <td>2024-01-26 20:19:22</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+
+
+        <!-- 셀 병합(merge) -->
+
+        <!-- 행 병합: rowspan / 아래쪽으로 합치는 것-->
+        <h2>행 병합</h2>
+        <table border="1">
+            <tr>
+                <td rowspan="2">1</td>
+                <td>2</td>
+                <td rowspan="2">3</td>
+            </tr>
+            <tr>
+                <!-- 주석 단축키 : command + / -->
+                <!-- <td>4</td> -->
+                <td>5</td>
+                <!-- <td>6</td> -->
+            </tr>
+        </table>
+        <hr>
+
+        <!-- 열 병합 : colspan 가로로 같은 칸 합치는것 -->
+        <table border="1" width="200">
+            <tr>
+                <td>1</td>
+                <td colspan="2">2</td>
+                <!-- <td>3</td> -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td colspan="3">7</td>
+                <!-- <td>8</td>
+                <td>9</td> -->
+            </tr>
+        </table>
+    </body>
+</html>

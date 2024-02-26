@@ -1,0 +1,76 @@
+<!-- 반복문과 자료구조 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>자바스크립트 기본 예제</title>
+    </head>
+    <body>
+        <!-- javascript 영역-->
+        <script>
+            // 반복문
+
+            // 0 ~ 4: 5번
+            for (let i = 0; i < 5; i++) {
+                document.write(i + " "); // 문서(브라우저)에 출력된다. 만약 줄바꿈하고 싶으면 "<br>"을 써준다.(브라우저가 태그로 해석)
+            }
+
+            // 배열(array)
+            let arr = [10, 20, 30, 40];
+            arr.push(50);
+            arr.push(60);
+            document.write(arr);
+
+            // money in pocket
+            // 배열의 요소만큼 인덱스를 얻는다.
+            for (let idx in arr) {
+                console.log("index:" + idx + ":::" + arr[idx]);
+            }
+
+            // 배열의 값을 얻는다.
+            for (let value of arr) {
+                console.log("값:" + value);
+            }
+
+            // 자바스크립트 객체
+            // key와 value의 쌍으로 이루어진 구조 (JAVA의 Map과 비슷)
+            var scoreInfo = {'subject': '국어', 'score': 98, 'rank':3};
+            console.log(scoreInfo);
+
+            let person = {};
+            person["name"] = "신보람";
+            person["age"] = 25;
+            person["gender"] = "여자";
+            console.log(person);  // {name: "신보람", age: 25, gender: "여자"}
+
+            // key로 value 접근하기
+            console.log("이름:" + person["name"]);
+            console.log("이름:" + person.name);
+            console.log("나이:" + person["age"]);
+            console.log("나이:" + person.age);
+            console.log("성별:" + person["gender"]);
+            console.log("성별:" + person.gender);
+
+            // 같은 키에 값 넣기 => 값 수정
+            person["age"] = 25 + 1;
+            console.log(person);
+
+            // key로 값 삭제하기
+            delete person['gender'];
+            console.log(person);
+
+            // 특정 key가 존재하는지 여부 확인
+            if ("age" in person) {
+                console.log("나이 정보가 존재합니다.");
+            } else {
+                console.log("나이 정보가 존재하지 않습니다.");
+            }
+
+            // 반복문으로 요소 하나하나 접근하기
+            let keys = Object.keys(person);
+            console.log("keys:" + keys);
+            for (let key of keys) {
+                console.log(key + ": " + person[key]);    // name: 신보람
+            }            
+        </script> 
+    </body>
+</html>

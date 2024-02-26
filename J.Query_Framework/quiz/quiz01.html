@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문제1</title>
+
+        <!-- J.Query CDN Link -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="quiz01_style.css">
+    </head>
+
+    <body>
+        <h1>1. 비밀번호 일치</h1>
+        비밀번호: <input type="password" id="pw">
+        비밀번호 확인: <input type="password" id="pwConfirm">
+        <button type="button" id="pwConfirmBtn">확인</button>
+        <hr>
+
+        <h1>2. 금칙어 포함 여부 확인</h1>
+        <input type="text" id="search">
+        <button type="button" id="searchBtn">확인</button>
+        <hr>
+
+        <h1>3. 더보기</h1>
+        <button type="button" id="moreBtn">더보기</button>
+        <div id="moreDesc" class="hide-box">숨겨져 있던 추가 설명입니다!!!<br>더보기를 누르면 나옵니다!!!</div>
+        <hr>
+
+        <h1>4. 사각형 바꾸기</h1>
+        <div id="box" class="red-box"></div><br>
+        <button type="button" id="changeBoxBtn">교체</button>
+        <hr>
+
+        <h1>5. 이미지 교체</h1>
+        <button type="button" id="beforeBtn">이전</button>
+        <image id="image" src="https://cdn2.unrealengine.com/a-beginner-s-guide-to-league-of-legends-teemo-1215x717-dc27844d5953.jpg" alt="이미지" width = 250 height = 150></image>
+        <button type="button" id="nextBtn">다음</button>
+        <hr>
+
+        <script>
+            $(document).ready(function(){//준비된 상태일때 안쪽에 입력한 함수 실행됨
+                //1. 비밀번호 일치
+                $("#pwConfirmBtn").on("click", function(){//id인 경우 #로 시작함
+                    // alert("클릭");
+                    let pw = $("#pw").val();//value값을 가져오기위해 .val()함수를 사용한다.
+                    // alert(pw); -> 이 경우 내가 입력한 pw값이 alert로 뜸
+                    let pwConfirm = $("#pwConfirm").val();
+
+                    //validation check(유효성 체크)
+                    //값이 비어있는 상태인 경우
+                    if (pw == "" || pwConfirm == "") {
+                        alert("비밀번호를 입력해 주세요.");
+                        return;//함수종료
+                    }
+                    if (pw != pwConfirm) {
+                        alert("비밀번호가 일치하지 않습니다.");
+                        return;//실패하는 경우 함수종료
+                    }
+                    alert("확인 완료"); //아무 문제도 없는 경우 위 유효성 체크에 아무것도 걸리지 않아서 확인 완료 출력
+                });
+
+                // 2) 금칙어 포함 여부 확인
+                $("#searchBtn").on("click", function(){
+                    //alert("ban word");
+                    let search = $("#search").val().trim();//trim() -> 앞뒤 여백 제거 함수
+                    // alert(search);
+                    //금칙어 목록 배열
+                    let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+                    for (let bannedWord of bannedWords) {//배열에 있는 단어 하나씩 순회하면서 bannedWord에 가져옴
+                        if (search.includes(bannedWord)) {//java에서는 contains / js에서는 includes
+                            alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    alert("검색 가능");
+                });
+
+                //3) 더보기
+                $("#moreBtn").on("click", function() {
+                    // alert("더보기");
+                    if ($("#moreDesc").is(":visible")) {//상자가 나타나 있다면 => 상자를 숨겨야함. / :visible : 보이는지 안보이는지 확인해준다.
+                        $("#moreDesc").hide();
+                        $("#moreBtn").text("더보기");
+
+                    } else { //상자가 숨겨져 있다면 => 상자를 나타나게 해야함.
+                        $("#moreDesc").show();
+                        $("#moreBtn").text("닫기");//태그 사이의 글자를 바꾸도록
+                    }
+
+                });
+
+                // 4) 사각형 바꾸기
+                $("#changeBoxBtn").on("click", function() {
+                    // alert("사각형 바꾸기");
+                    // let box = document.getElementById("box");
+                    // if (box.className == "red-box") {
+                    //     box.className = "green-box";
+                    // } else {
+                    //     box.className = "red-box";
+                    // }
+                    
+                    if ($("#box").hasClass("red-box")) {
+                        $("#box").removeClass("red-box");
+                        $("#box").addClass("green-box");
+                    } else {
+                        $("#box").removeClass("green-box");
+                        $("#box").addClass("red-box");
+                    }
+                    
+                });
+
+                // 5) 이미지 교체
+
+                //이미지 ur을 배열에 저장
+                const imageUrls = [
+                  'https://cdn2.unrealengine.com/a-beginner-s-guide-to-league-of-legends-teemo-1215x717-dc27844d5953.jpg',
+                  'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_37.jpg',
+                  'https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltfa56c635ade77a1c/5f161293e20d7e7af7129922/BaseYone_optimized.jpg'  
+                ];
+
+                let index = 0;
+
+                // src 주소를 배열에 있는 주소로 바꿔주는 함수 구현
+                function changeImage() {
+                    const image = document.getElementById('image');
+                    image.src = imageUrls[index];
+                }
+
+                // 이전 버튼 구현
+                $("#beforeBtn").on("click", function() {
+                    // alert("이전버튼");
+                    index = (index - 1 + imageUrls.length) % imageUrls.length;
+                    changeImage();
+                });
+
+                // 다음 버튼 구현
+                $("#nextBtn").on("click", function() {
+                    // alert("다음버튼");
+                    index = (index + 1) % imageUrls.length;
+                    changeImage();
+                });
+
+            });
+            // 5. 배열에 이미지를 넣고 순회시키기.
+            
+        </script>
+    </body>
+</html>

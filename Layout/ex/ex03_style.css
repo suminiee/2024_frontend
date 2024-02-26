@@ -1,0 +1,13 @@
+/* margin: 0 auto로 하면 위는 딱 달라붙고 가운데 정렬이 됨. */
+body { margin: 0; }
+#wrap { margin: 0 auto; width: 1200px; background-color: #999;}
+/* 모든 div는 부모의 width값을 물려받음 */
+header { height: 100px; background-color: bisque; }
+nav { height: 50px; background-color: cadetblue; }
+.contents { height: 450px; background-color: paleturquoise; }
+footer { height: 200px; background-color: lightskyblue; }
+.flex { display: flex; }
+.contents > .left { width: 70%; height: 450px; background-color: dodgerblue;}
+aside { width: 30%; height: 450px; background-color: tomato; }
+/* .contents .at1 { } */
+.at1 { width: 700px; height: 200px; background-color: lightpink; margin: 15px 70px;}

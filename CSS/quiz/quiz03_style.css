@@ -1,0 +1,9 @@
+#month { font-size: 50px; font-weight: bolder; }
+#table1, th, td{ border: 1px solid black; border-collapse: collapse;}
+#table1 { width: 1300px; table-layout: fixed; }
+#table1 thead { height: 40px; }
+#table1 tbody { height: 700px; }
+#table1 tbody td:hover { background-color: skyblue; }
+td { padding-left: 10px; padding-top: 10px; vertical-align: top;}
+#today { font-weight: bolder; background-color: lightgreen;}
+.red { color: red; }

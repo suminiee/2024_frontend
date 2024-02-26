@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QUIZ01</title>
+    </head>
+    <body>
+        <script>
+            // 1. 
+            let num1 = 5;
+            let num2 = 8;
+            // 5 X 8 = 40
+            //alert(num1 + " X " + num2 + " = " + (num1 * num2));
+
+            // 2.
+            let number1 = 12;
+            let number2 = 34;
+
+            console.log(number1 + "" +  number2); // integer + string => string
+            console.log(String(number1) + String(number2));
+
+            // 3.
+            let number3 = 10;
+            let number4 = "10";
+            // (1)
+            if (number3 === number4) {
+                console.log("같다");
+            } else {
+                console.log("같지 않다.");
+            }
+
+            // (2)
+            if (number3 !== number4) {
+                console.log("같지 않다.");
+            }
+
+            // 4
+            let score;        // undefined
+            let number = null;  // null
+
+            // (1) == 연산자: undefined와 null을 같은 취급
+            if (score == number) {
+                console.log(true);
+            }
+
+            // (2) === 연산자: 타입이 모두 일치할 때만 true
+            if (score === undefined && number === null) {
+                console.log(true);
+            }
+
+            // 5. 
+            //let userId = "marobiana";
+            //let userId = null;
+            //let userId;
+            let userId = "";
+
+            // 비정상적인 경우     (null, undefined), ""-string
+            // if (userId == null || userId == "") {
+            //     alert("비정상적인 접근입니다.");
+            // } else {
+            //     alert("안녕하세요 " + userId + "님");
+            // }
+
+            // 6. 
+            let word1 = "hello";
+
+            if(word1 == "hello") {
+                var word2  = " world";
+            }
+            
+            console.log(word1 + word2);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+#table1, th, td { border: 1px solid black; border-collapse: collapse;}
+#table1 { width: 700px;}
+#table1 thead { height: 40px; background-color: greenyellow; }
+#table1 tbody { height: 100px; }
+.text1 { text-align: center; height: 60px;}
+.text1:hover { background-color: plum; }
+.last { background-color: green; height: 60px; }
+.sum { text-align: center; }
+.cost { text-align: right; }
+.text2 { width: 124px; height: 25px;}
+#button1 { width: 700px; height: 30px;}

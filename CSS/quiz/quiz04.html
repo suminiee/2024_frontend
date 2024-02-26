@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>가계부</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="quiz04_style.css">
+    </head>
+    <body>
+        <h1>20XX년 X월 가계부</h1>
+        <table id="table1">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>사용처</th>
+                    <th>결제</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text1">
+                    <td>5월 4일</td>
+                    <td>식재료 쇼핑</td>
+                    <td>신한카드</td>
+                    <td>87,000원</td>
+                </tr>
+                <tr class="text1">
+                    <td>5월 2일</td>
+                    <td>기름 주유</td>
+                    <td>국민카드</td>
+                    <td>50,000원</td>
+                </tr>
+                <tr class="text1">
+                    <td>5월 2일</td>
+                    <td>응급실 떡볶이</td>
+                    <td>현금</td>
+                    <td>12,000원</td>
+                </tr>
+                <tr class="last">
+                    <td class="sum">합계</td>
+                    <td colspan="3" class="cost">149,000원</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>
+            <b>날짜: </b>
+            <input type="text" class="text2">
+            <b>사용처: </b>
+            <input type="text" class="text2">
+            <b>결제: </b>
+            <input type="text" class="text2">
+            <b>가격: </b>
+            <input type="text" class="text2">
+        </p>
+        <button type="button" id="button1">저장하기</button>
+
+    </body>
+</html>

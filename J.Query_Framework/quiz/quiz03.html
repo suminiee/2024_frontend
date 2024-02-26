@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>행사 일정</title>
+        <!-- jquery원본 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <!-- datepicker -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+    </head>
+    <body>
+        <div class="event-box">
+            <h1 class="font-weight-bold">행사 일정 입력</h1>
+            <div>행사 제목</div>
+            <input type="text" class="form-control my-3">
+
+            <!-- 적절하게 펼쳐지도록 정렬 => justify-content-between -->
+            <div class="d-flex justify-content-between align-items-center">
+                <span>시작일</span>
+                <input type="text" class="form-control col-4" id="startDate">
+                
+                <span>종료일</span>
+                <input type="text" class="form-control col-4" id="endDate">
+            </div>
+
+            <!-- bootstarp으로 버튼에 하늘색 효과 주고싶으면 btn-info 사용 -->
+            <!-- w-100 : 부모의 width값을 100% 물려받겠다는 의미 -->
+            <button type="button" class="btn btn-info w-100 mt-3">저장</button>
+        </div>
+        
+    </body>
+
+    <script>
+        $(document).ready(function() {
+            // 모든 데이터피커에 적용
+            $.datapicker.setDefaults({
+                dateFormat:"yy-mm-dd"
+                , dayNamesMin:["일", "월", "화", "수", "목", "금", "토"]//요일 한글
+                , minDate:0 //오늘부터 선택할 수 있도록 함.
+            });
+
+            //오늘 날짜로 이동하는 함수
+            $.datepicker._gotoToday = function(id) {
+                $(id).datepicker()
+            }
+
+            $("#startDate").datepicker( {
+                showButtonPannel:true //오늘 버튼 노출
+                , onSelect:function(dateText) {
+                    //시작일이 선택되는 순간, 종료일의 minDate 변경
+                    $("#endDate").datepicker("option", "minDate", dateText)
+                }
+            });
+            //new date() => 오늘 날짜
+            $("#endDate").datepicker("setDate", new Date());datepicker("hide").blur();
+        });
+    </script>
+
+    <style>
+        .event-box {width: 500px;}
+    </style>
+</html>

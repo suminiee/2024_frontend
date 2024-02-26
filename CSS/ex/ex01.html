@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>내부 스타일시트 적용</title>
+        <!-- 문서 인코딩 종류 -->
+        <meta charset="utf-8">
+
+        <!-- html파일 내에 스타일시트 정의 -->
+        <style>
+            /* 여기서부터는 css */
+            /* 문서 전체에 효과 주기 */
+            * { color:lightblue; }
+            
+            /* 태그에 꾸미기 효과 */
+            h3 {
+                color:lightcoral;
+                text-align: center; /* 가운데 정렬 */
+            }
+
+            body { background-color: #fff; }
+            
+            span {
+                color: lightgreen;
+                font-size: 28px; /* 글씨 사이즈 조절 */
+                font-weight: bold; /* 글자 굵게 하는 효과 */
+            }
+            a { color: #000; text-decoration: none; }
+            /*id 꾸미기 효과*/
+            #text1 { color:coral; font-size: 16px; font-weight: lighter; }
+            #text2 { color: springgreen; font-size: 18px; font-style: italic;}
+            #text3 { color: red; font-size: 20px; }
+
+            /*클래스 꾸미기 효과*/
+            .bg-yellow { background-color: yellow;}
+            .text-color-white { color: white; }
+
+        </style>
+
+
+    </head>
+    <body>
+        그냥 글씨를 써봅니다.
+        <h3>스타일 시트 내용이 적용된 제목3</h3>
+
+        <!-- 글씨를 담는 태그 -->
+        <span>글씨가 들어가는 span 태그</span><br>
+        <span>span 태그</span><br><br>
+
+        <!-- 앵커 태그(Anchor) -->
+        <a href="http://marondal.com" target="_blank">마론달 사이트로 갑니다.</a><br><br>
+
+        <!-- id속성 : 태그에 유일한 이름을 지정해준다.(중복 안됨) -->
+        <span id="text1">글씨 효과를 개별로 주고싶다면?</span><br>
+        <span id="text2">너무 졸려 잠자고싶다</span><br><br>
+
+        <!-- class 속성: 태그에 별명을 지정한다. (중복 o) -->
+        <span class="bg-yellow">글자 배경이 노란색으로 칠해지는 효과</span><br>
+        <span id="text3" class="bg-yellow">text3 효과와 글자 배경이 노란색인 효과</span><br>
+        <span class="bg-yellow text-color-white">글자색은 흰색, 배경색은 노란색</span><br>
+
+        <!-- 인라인 스타일 주기 (최악이라 별로 사용 추천 안함/앞으로는 안쓰는게 좋음/우선순위가 제일 높아서 먼저 적용됨)-->
+        <span style="color: deeppink;">안녕하세요</span><br>
+
+        <!-- 우선순위 : 인라인 > id > class > 태그 > "" -->
+        <span class="bg-yellow text-color-white" style="color: darkblue;">안녕하세요2</span><br>
+
+
+
+    </body>
+</html>

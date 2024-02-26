@@ -1,0 +1,9 @@
+/* 기본적으로 들어가는 margin이 없어짐 */
+body { margin: 0; }
+#wrap { background-color: #999; width: 1200px; height: 1000px; }
+header { background-color: greenyellow; width: 1200px; height: 200px; }
+.contents { width: 1200px; height: 600px; background-color: aqua; }
+footer { width: 1200px; height: 200px; background-color: salmon; }
+.contents > aside { width: 300px; height: 600px; background-color: rgb(235, 163, 163); }
+.contents > .right { width: 900px; height: 600px; background-color: dodgerblue;}
+.flex { display: flex;}

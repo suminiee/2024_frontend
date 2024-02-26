@@ -1,0 +1,15 @@
+body { margin: 0;}
+#wrap { margin: 0 auto; width: 1200px; height: 1000px; }
+header { height: 100px; }
+.flex { display: flex; }
+.logo { width: 20%; background-color: brown; }
+nav { width: 80%; background-color: rgb(245, 110, 110); }
+.contents { width: 1200px; height: 400px;}
+.content1 { width: 600px; height: 400px; background-color: rgb(162, 232, 232);}
+aside { width: 600px; height: 400px; background-color: bisque;}
+.art1 { height: 50%; background-color: dodgerblue; }
+.art2 { height: 50%; background-color: lightseagreen; }
+footer { height: 80px; }
+.logo1 { width: 20%; background-color: pink;}
+address { width: 60%; background-color: rosybrown; font-style: italic;}
+.logo2 { width: 20%; background-color: pink; }

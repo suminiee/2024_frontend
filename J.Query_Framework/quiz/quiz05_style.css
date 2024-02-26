@@ -1,0 +1,14 @@
+header {height: 70px;}
+.contents {min-height: 600px;}
+footer {height: 50px;}
+
+.contents > .sign-up-box {width: 300px;}
+
+.subject-text {font-size: 15px; font-weight: bold;}
+
+#idLengthText {font-size: 12px; color: skyblue;}
+
+#email {width: 145px;}
+#email-list {width: 145px;}
+
+#copyright {font-size: 13px; color: lightgray;}

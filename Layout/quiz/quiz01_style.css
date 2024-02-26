@@ -1,0 +1,12 @@
+.box-size-100-1 { width: 100px; height: 100px; background-color: rgb(232, 156, 156);}
+.box-size-100-2 { width: 100px; height: 100px; background-color: lightcoral; }
+.box-size-100-3 { width: 100px; height: 100px; background-color: rgb(199, 104, 104); }
+.box-size-100-4 { width: 100px; height: 100px; background-color: rgb(186, 79, 79); }
+.flex { display: flex; }
+.divhead { margin-bottom: 30px; }
+.flex1 { display: flex; margin-top: 10px;}
+.flex2 { display: flex; justify-content: center; margin-top: 10px; }
+#div1 { margin-right: 10px; }
+#div2  { margin-right: 10px; }
+#div3 { margin-right: 10px; }
+#div4 { margin-right: 10px; }

@@ -1,0 +1,28 @@
+/* body { background-color: lightblue; } */
+#userId { width:200px; height:20px; font-size:large; }
+.password { width:200px; height:20px; font-size: medium; }
+/* 테이블 크기 지정 */
+#table1 { width: 300px; height: 200px; }
+/* 테이블 전체 얇은 테두리 */
+#table1, th, td { 
+    /* 1px 굵기의 solid->실선 */
+    border: 1px solid black;
+    /* 칸 사이의 여백 삭제 */
+    border-collapse: collapse;
+    /* 제목에 있는 칸에만 배경 색 주기 */
+}
+
+#table1 > thead {
+    /* 바로 아래 자식인 경우에만 > 를 사용함. */
+    background-color: coral;
+}
+
+/* tbody 행에 마우스 올리면 배경색 변경 -> :hover */
+#table1 > tbody tr:hover{
+    background-color: lightskyblue;
+}
+
+/* 칸 안쪽 여백 : padding (사방으로 다 지정해서 줄 수 있음) */
+/* 상하, 좌우 // 시계방향 (위 오른쪽 아래 왼쪽) */
+/* text-align : 정렬 */
+td { padding:30px 15px 20px 5px; text-align: center; vertical-align: top; }

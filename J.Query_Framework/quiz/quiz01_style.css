@@ -1,0 +1,11 @@
+.hide-box {display:none;}
+.red-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.green-box {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+}

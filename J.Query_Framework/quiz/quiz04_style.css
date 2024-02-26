@@ -1,0 +1,16 @@
+header {
+    height:80px;
+}
+
+.contents {
+    min-height:400px;
+}
+
+footer {
+    height:50px; 
+    background-color: #f4f4f4;
+}
+
+footer > .copyright {
+    font-size:13px;
+}

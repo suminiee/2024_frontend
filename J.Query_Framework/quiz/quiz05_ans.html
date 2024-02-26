@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- jquery: bootstrap, datepicker -->
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+        <!-- 내가 만든 외부 스타일 시트 -->
+        <link rel="stylesheet" type="text/css" href="quiz05_style.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <header >
+                <h1 class="text-danger">111번가</h1>
+                <hr>
+            </header>
+            <section class="contents d-flex justify-content-center">
+                <div class="sign-up-box">
+                    <h2 class="font-weight-bold">가입 정보 입력</h2>
+                    <div class="text-secondary">111번가의 다양한 혜택을 누려 보세요!!!</div>
+
+                    <div class="subject-text my-2">아이디</div>
+                    <input type="text" id="id" class="form-control">
+                    <small id="idLengthWarn" class="text-info d-none">아이디를 4자 이상 입력하세요.</small>
+
+                    <div class="subject-text my-2">비밀번호</div>
+                    <input type="password" id="password" class="form-control">
+
+                    <div class="subject-text my-2">비밀번호 확인</div>
+                    <input type="password" id="confirmPassword" class="form-control">
+
+                    <div class="subject-text my-2">이름</div>
+                    <input type="text" id="name" class="form-control">
+
+                    <div class="subject-text my-2">이메일</div>
+                    <div class="d-flex align-items-center">
+                        <input type="text" id="email" class="form-control">
+                        <span>@</span>
+                        
+                        <input type="text" id="emailDomainInput" class="form-control d-none">
+                        
+                        <select id="emailDomainSelect" class="form-control">
+                            <option>naver.com</option>
+                            <option>google.com</option>
+                            <option>nate.com</option>
+                            <option>직접 입력</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="signUpBtn" class="btn btn-danger w-100 mt-3">가입하기</button>
+                </div>
+            </section>
+            <footer class="d-flex justify-content-center align-items-center">
+                <div class="text-secondary">
+                    <small>Copyright 2023. 111st All rights Reserved.</small>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                // 2. 회원가입 버튼 클릭 후 데이터 출력
+                $("#signUpBtn").on('click', function() {
+                    //alert("aaa");
+                    let id = $('#id').val().trim();
+                    let name = $('#name').val().trim();
+                    let email = $('#email').val().trim();
+                    let emailDomain = $("#emailDomainSelect").val();
+                    
+                    // 3. 유효성 검사 validation check
+                    let password = $("#password").val();
+                    let confirmPassword = $("#confirmPassword").val();
+
+                    if (id == "") {
+                        alert("이름을 입력하세요");
+                        return;
+                    }
+
+                    if (password == "" || confirmPassword == "") {
+                        alert("비밀번호를 입력하세요");
+                        return;
+                    }
+
+                    // 4. 비밀번호 일치 확인
+                    if (password != confirmPassword) {
+                        alert("비밀번호가 일치하지 않습니다.");
+                        return;
+                    }
+
+                    if (name == "") {
+                        alert("이름을 입력하세요");
+                        return;
+                    }
+
+                    if (email == "") {
+                        alert("이메일을 입력하세요");
+                        return;
+                    }
+
+                    // 5번 이후 emailDomain 다시 가져오기
+                    // emailDomainInput이 보여지고 있으면 도메인을 이 안에 있는 값으로 변경
+                    if ($("#emailDomainInput").hasClass("d-none") == false) {
+                        emailDomain = $('#emailDomainInput').val().trim();
+                    }
+
+                    // 2. 회원가입 버튼 클릭 후 데이터 출력
+                    alert("아이디:" + id + "\n이름:" + name + "\n이메일:" 
+                    + email + "@" + emailDomain + "\n가입이 완료 되었습니다.");
+                });
+
+                // 5. 셀렉트
+                $("#emailDomainSelect").on('change', function() {
+                    //alert("aaaa");
+                    //$('#emailDomainSelect > option:selected').val();
+                    //$('#emailDomainSelect').val();
+                    let value = $(this).val(); // 방금 선택된 객체의 값을 가져온다.
+                    //alert(value);
+                    if (value == "직접 입력") {
+                        // select 태그는 숨김   => d-none 추가
+                        $('#emailDomainSelect').addClass("d-none");
+
+                        // input 태그는 나타낸다 => d-none 제거
+                        $('#emailDomainInput').removeClass("d-none");
+                    }
+                });
+
+                // 6. 아이디 길이 동적 검사
+                $('#id').on('keyup', function() {
+                    let id = $(this).val();
+                    //alert(id);
+                    if (id.length < 4) {
+                        // 4자 미만이면 경고문구 노출 => d-none 제거
+                        $('#idLengthWarn').removeClass("d-none");
+                    } else {
+                        // 4자 이상이면 경고문구 숨김 => d-none 추가
+                        $('#idLengthWarn').addClass("d-none");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

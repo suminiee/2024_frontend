@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>div 태그 사용하기</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="ex01_style.css">
+    </head>
+    <body>
+        <!-- div 상자는 "block 태그"(layout을 위해)이므로 다음 요소가 아래로 떨어진다. -->
+        <div id="div1" class="box-size-100">상자</div>
+        <div id="div2" class="box-size-100"></div>
+
+        <!-- div를 옆에 붙이기 => flex -->
+        <div class="flex">
+            <div id="div3" class="box-size-100"></div>
+            <div id="div4" class="box-size-100"></div>
+            <div id="div5" class="box-size-100"></div>
+        </div>
+
+        <!-- inline 태그 / 글씨를 쓰기 위함 -->
+        <!-- inline 태그 : 인라인 태그에는 크기 지정이 안됨 -->
+        <span class="text1">span 태그에 글씨를 쓴다111</span>
+        <span class="text2">span 태그에 글씨를 쓴다222</span>
+    </body>
+</html>

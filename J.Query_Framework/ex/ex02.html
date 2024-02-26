@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이벤트</title>
+        <!-- jquery cdn -->
+        <!-- J.Query CDN Link -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="ex02_style.css">
+    </head>
+
+    <body>
+        좋아하는 동물을 하나만 선택하세요:
+        <!-- label로 감싸면 개라는 글자를 선택해도 radio가 선택됨. , name으로 그룹 명을 지어줌. value는 서버로 보낼 때 필요함. radio는 중복선택 안됨. -->
+        <label><input type="radio" name="animal" id="dog" value="dog" checked>개</label>
+        <label><input type="radio" name="animal" id="cat" value="cat">고양이</label>
+        <label><input type="radio" name="animal" id="lion" value="lion">사자</label>
+        <br><br>
+
+
+        <button type="button" id="likeCatBtn">고양이를 클릭하는 버튼</button>
+        <br><br>
+        <button type="button" id="likeCancelBtn">선택 초기화 버튼</button>
+        <hr>
+
+        <!-- select 태그 '변경' 으로 인식됨. -->
+        주소이동:
+        <select id="site">
+            <option>--선택하기--</option>
+            <option>네이버</option>
+            <option>구글</option>
+            <option>유튜브</option>
+            <option>치지직</option>
+        </select>
+
+        <script>
+            $(document).ready(function() {
+                // 1) radio
+                // 모든 input을 가져오되, name이 animal인 input만 가져오도록 함.
+                $("input[name=animal]").on("change", function() {
+                    // alert("변경");
+                    // check 된 값 가져오기 / .val() : value값을 가져옴
+                    let checkedVal = $("input[name=animal]:checked").val();
+                    // alert(checkedVal);
+                });
+
+                $("#likeCatBtn").on("click", function() {
+                    // alert("클릭");
+                    // 단독으로 사용되는 함수(checked같은)는 property -> .prop() 사용
+                    $("#cat").prop("checked", true);
+
+                });
+
+                // radio 선택 모두 해제
+                $("#likeCancelBtn").on("click", function() { 
+                    // alert("선택해제");
+                    $("input[name=animal]").prop("checked", false);
+
+                });
+
+                // 2) select 주소 이동
+                $("#site").on("change", function() {
+                    // alert("변경이 일어남");
+                    //selected 태그가 붙어있는 하나의 option을 알고싶은경우
+                    let selectedVal = $("#site > option:selected").val();
+                    // alert(selectedVal);
+
+                    if (selectedVal == "네이버") {
+                        location.href = "https://naver.com";
+                    } else if (selectedVal == "구글") {
+                        location.href = "https://google.com";
+                    } else if (selectedVal == "유튜브") {
+                        location.href = "https://youtube.com";
+                    } else if (selectedVal == "치지직") {
+                        location.href = "https://chzzk.naver.com";
+                    }
+                });
+
+            });  
+        </script>
+    </body>
+</html>

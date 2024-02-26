@@ -1,0 +1,20 @@
+.blue-box {
+    width: 100px;
+    height : 100px;
+    background-color: blue;
+}
+.red-box {
+    width: 100px;
+    height : 100px;
+    background-color: red;
+}
+.green-box {
+    width: 100px;
+    height : 100px;
+    background-color: green;
+}
+.purple-box {
+    width: 100px;
+    height : 100px;
+    background-color: purple;
+}

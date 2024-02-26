@@ -1,0 +1,11 @@
+body { margin: 0; }
+.wrap { width: 1200px; height: 1300px; }
+header { width: 1200px; height: 100px; background-color: beige;}
+.contents { width: 1200px; height: 1100px; }
+.flex { display: flex; }
+aside { width: 900px; height: 1100px; background-color: lightgreen; }
+.right { width: 300px; height: 1100ox; background-color: aqua; }
+footer { width: 1200px; height: 100px; }
+.leftblock { width: 200px; height: 100px; background-color: purple; }
+address { width: 800px; height: 100px; background-color: salmon; }
+.rightblock { width: 200px; height: 100px; background-color: purple;}
